@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Add New Autor</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveAutor()" #bookForm="ngForm">
+        <div class="form-group">
+
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" [(ngModel)]="autor.nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Biografia</label>
+          <input type="text" class="form-control" [(ngModel)]="autor.title" name="autor" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Fecha</label>
+          <input type="text" class="form-control" [(ngModel)]="autor.fecha" name="fecha" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Nacionalidad</label>
+          <input type="text" class="form-control" [(ngModel)]="autor.nacionalidad" name="nacionalidad" required>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!autorForm.form.valid">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
