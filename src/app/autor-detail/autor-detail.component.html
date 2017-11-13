@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>{{ autor.title }}</h1>
+  <dl class="list">
+    <dt>Nombre</dt>
+    <dd>{{ autor.nombre }}</dd>
+    <dt>Biografia</dt>
+    <dd>{{ autor.biografia }}</dd>
+    <dt>Fecha_de_nacimiento</dt>
+    <dd>{{ autor.fecha_de_nacimiento }}</dd>
+    <dt>Nacionalidad</dt>
+    <dd>{{ autor.nacionalidad }}</dd>
+  </dl>
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <a [routerLink]="['/autor-edit', autor._id]" class="btn btn-success">EDIT</a>
+      <button class="btn btn-danger" type="button" (click)="deleteAutor(autor._id)">DELETE</button>
+    </div>
+  </div>
+</div>
+
