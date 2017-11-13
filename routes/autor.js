@@ -3,9 +3,6 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Autor = require('../models/Autor.js');
 
-
-
-
 /* GET ALL Autor */
 router.get('/', function(req, res, next) {
   Autor.find(function (err, products) {
@@ -21,7 +18,6 @@ router.get('/:id', function(req, res, next) {
     res.json(post);
   });
 });
-
 
 /* SAVE autor */
 router.post('/', function(req, res, next) {
@@ -44,6 +40,28 @@ router.delete('/:id', function(req, res, next) {
  Autor.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
+  });
+});
+
+/* GET SINGLE Autor BY Name */    /* ASIGNATURA*/
+router.get('/filtro_nombre/:nombre', function(req, res, next) {
+  Subject.find({"nombre" : req.params.nombre }, function (err, result) {
+    if (err) return next(err);
+    res.json(result);
+  });
+});
+/* GET SINGLE Autor BY Titulacion*/    /* ASIGNATURA*/
+router.get('/filtro_titulacion/:titulacion', function(req, res, next) {
+  Subject.find({"titulacion" : req.params.nombre }, function (err, result) {
+    if (err) return next(err);
+    res.json(result);
+  });
+});
+/* GET SINGLE Autor BY Cuatrimestre*/    /* ASIGNATURA*/
+router.get('/filtro_cuatrimestre/:cuatrimestre', function(req, res, next) {
+  Subject.find({"cuatrimestre" : req.params.cuatrimestre }, function (err, result) {
+    if (err) return next(err);
+    res.json(result);
   });
 });
 

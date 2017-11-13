@@ -23,7 +23,8 @@ const ROUTES = [
   { path: 'book-create', component: BookCreateComponent },
   { path: 'author-create', component: AutorCreateComponent },
   { path: 'book-edit/:id', component: BookEditComponent },
-  { path: 'author-edit/:id', component: AutorEditComponent }
+  { path: 'author-edit/:id', component: AutorEditComponent },
+  { path: 'author', component: AutorComponent}
 ];
 
 @NgModule({

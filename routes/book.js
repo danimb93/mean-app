@@ -19,7 +19,13 @@ router.get('/:id', function(req, res, next) {
     res.json(post);
   });
 });
-
+/* GET SINGLE BOOK BY NAME */
+router.get('/:id', function(req, res, next) {
+  Book.findById(req.params.id).populate('author').exec(function (err, post)  {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
 /* SAVE BOOK */
 router.post('/', function(req, res, next) {
   Book.create(req.body, function (err, post) {
