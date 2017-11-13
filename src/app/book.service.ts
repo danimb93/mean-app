@@ -18,7 +18,17 @@ export class BookService {
         });
     });
   }
-
+  getAllBooks2() {
+    return new Promise((resolve, reject) => {
+      this.http.get('/book')
+        .map(res => res.json())
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
   showBook(id) {
     return new Promise((resolve, reject) => {
       this.http.get('/book/' + id)

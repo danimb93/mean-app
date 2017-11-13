@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BookService } from '../book.service';
+import { AutorService } from '../autor.service';
 
 @Component({
   selector: 'app-autor-create',
@@ -8,17 +8,17 @@ import { BookService } from '../book.service';
   styleUrls: ['./autor-create.component.css']
 })
 export class AutorCreateComponent implements OnInit {
-  book = {};
+  autor = {};
 
-  constructor(private autorService: BookService, private router: Router) { }
+  constructor(private autorService: AutorService, private router: Router) { }
 
 
   ngOnInit() {
   }
   saveAutor() {
-    this.autorService.saveBook(this.book).then((result) => {
+    this.autorService.saveAutor(this.autor).then((result) => {
       let id = result['_id'];
-      this.router.navigate(['/book-details', id]);
+      this.router.navigate(['/autor-details', id]);
     }, (err) => {
       console.log(err);
     });

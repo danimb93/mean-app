@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Book = require('../models/Book.js');
+var Autor = require('../models/Autor.js');
 
 /* GET ALL BOOKS */
 router.get('/', function(req, res, next) {
@@ -13,10 +14,10 @@ router.get('/', function(req, res, next) {
 
 /* GET SINGLE BOOK BY ID */
 router.get('/:id', function(req, res, next) {
-  Book.findById(req.params.id).populate("author"), function (err, post) {
+  Book.findById(req.params.id).populate('author').exec(function (err, post)  {
     if (err) return next(err);
     res.json(post);
-  }
+  });
 });
 
 /* SAVE BOOK */

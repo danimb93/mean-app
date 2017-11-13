@@ -5,6 +5,7 @@ var Autor = require('../models/Autor.js');
 
 
 
+
 /* GET ALL Autor */
 router.get('/', function(req, res, next) {
   Autor.find(function (err, products) {
@@ -15,7 +16,7 @@ router.get('/', function(req, res, next) {
 
 /* GET SINGLE Autor BY ID */
 router.get('/:id', function(req, res, next) {
-  Autor.findById(req.params.id, function (err, post) {
+  Autor.findById(req.params.id).populate('book').exec(function (err, post) {
     if (err) return next(err);
     res.json(post);
   });

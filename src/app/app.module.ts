@@ -11,6 +11,9 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookCreateComponent } from './book-create/book-create.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { AutorCreateComponent } from './autor-create/autor-create.component';
+import { AutorEditComponent } from './autor-edit/autor-edit.component';
+import { AutorDetailComponent } from './autor-detail/autor-detail.component';
+import { AutorComponent } from './autor/autor.component';
 
 
 const ROUTES = [
@@ -18,8 +21,9 @@ const ROUTES = [
   { path: 'books', component: BookComponent },
   { path: 'book-details/:id', component: BookDetailComponent },
   { path: 'book-create', component: BookCreateComponent },
-  { path: 'autor-create', component: AutorCreateComponent },
-  { path: 'book-edit/:id', component: BookEditComponent }
+  { path: 'author-create', component: AutorCreateComponent },
+  { path: 'book-edit/:id', component: BookEditComponent },
+  { path: 'author-edit/:id', component: AutorEditComponent }
 ];
 
 @NgModule({
@@ -30,7 +34,10 @@ const ROUTES = [
     BookCreateComponent,
     AutorCreateComponent,
     BookEditComponent,
-    AutorCreateComponent
+    AutorCreateComponent,
+    AutorEditComponent,
+    AutorDetailComponent,
+    AutorComponent
   ],
   imports: [
     BrowserModule,
